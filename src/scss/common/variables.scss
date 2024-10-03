@@ -1,0 +1,14 @@
+$container: 1440;
+$padding: 30;
+$containerWithPadding: $container + ($padding * 2);
+
+$accent: #ff451c;
+$bgc: #ffffe4;
+$white: #fffff2;
+$fff: #ffffff;
+$black: #13130f;
+$linear: linear-gradient(180deg, #ff451c 0%, #ffa910 100%);
+$gray: rgba(
+    $color: $black,
+    $alpha: 0.1
+);

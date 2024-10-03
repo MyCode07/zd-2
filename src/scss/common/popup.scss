@@ -1,0 +1,215 @@
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 16;
+    overflow-y: auto;
+
+    background: rgba(236, 75, 35, 0.5);
+    backdrop-filter: blur(5px);
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    transition: opacity 0.3s ease 0s;
+
+    opacity: 0;
+    pointer-events: none;
+
+    &._open {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    // .popup__body
+
+    &__body {
+        margin-inline: auto;
+        background-color: $white;
+
+        max-width: 1000px;
+
+        @include adaptive-value("padding-top", 60, 30, 1);
+        @include adaptive-value("padding-bottom", 60, 30, 1);
+        @include adaptive-value("padding-inline", 60, 10, 1);
+        @include adaptive-value("border-radius", 40, 20, 1);
+
+        h2 {
+            text-align: center;
+            margin-bottom: 0.9em;
+            @include adaptive-value("font-size", 64, 30, 1);
+        }
+    }
+
+    // .popup__close
+
+    &__close {
+        margin-inline: auto;
+
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+
+        @include adaptive-value("margin-bottom", 30, 15, 1);
+
+        @media (max-width: 768px) {
+            width: 50px;
+            height: 50px;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $accent;
+
+        img,
+        svg {
+            width: 15px;
+            flex: 0 0 auto;
+            stroke: $white;
+            stroke-width: 2px;
+            pointer-events: none;
+        }
+    }
+
+    .form {
+        max-width: 100%;
+
+        // .form__callback
+
+        &__callback {
+        }
+
+        // .form__row
+
+        &__row {
+        }
+
+        // .form__item
+
+        &__item {
+            @media (min-width: 769px) {
+                input {
+                    height: 80px;
+                }
+
+                textarea {
+                    height: 180px;
+                }
+
+                input,
+                textarea {
+                    @include adaptive-value("font-size", 26, 18, 1);
+                }
+            }
+        }
+
+        // .form__bottom
+
+        &__bottom {
+            ._btn {
+                @media (min-width: 769px) {
+                    height: 100px;
+
+                    @include adaptive-value("font-size", 36, 20, 1);
+
+                    border-top-width: 2px;
+                    border-right-width: 2px;
+                    border-bottom-width: 6px;
+                    border-left-width: 2px;
+                }
+            }
+        }
+    }
+}
+
+.phone-popup {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 13;
+
+    @media (max-width: 1024px) {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    &._open {
+        ul {
+            max-height: 265px;
+            pointer-events: all;
+        }
+    }
+
+    ul {
+        margin-bottom: 5px;
+        border-radius: 100px;
+
+        pointer-events: none;
+        max-height: 0;
+        overflow: hidden;
+
+        transition: all 0.3s ease 0s;
+
+        & > :not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+
+    button,
+    a {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $accent;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img,
+        svg {
+            width: 50%;
+            height: 50%;
+            pointer-events: none;
+            fill: $white;
+            flex: 0 0 auto;
+
+            transition: fill 0.3s ease 0s;
+        }
+    }
+
+    button {
+        transition: all 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: 0px 0px 20px 10px rgba($color: $accent, $alpha: 0.25);
+            }
+        }
+    }
+
+    a {
+        border: 2px solid $accent;
+        transition: all 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $white;
+
+                svg {
+                    fill: $accent;
+                }
+            }
+        }
+    }
+
+    // .phone-popup__open
+
+    &__open {
+    }
+}

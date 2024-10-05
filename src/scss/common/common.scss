@@ -95,6 +95,7 @@ p {
 ._subtitle {
     @include adaptive-value("font-size", 20, 16, 1);
     line-height: 1.3;
+    font-weight: 400;
 }
 
 ._btn {
@@ -138,6 +139,14 @@ p {
     &-white {
         background-color: $white;
         color: $accent;
+    }
+
+    // ._btn-border
+
+    &-border {
+        background-color: transparent;
+        color: $black;
+        border: 2px solid currentColor;
     }
 }
 

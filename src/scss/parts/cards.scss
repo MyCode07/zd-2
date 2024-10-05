@@ -1,0 +1,90 @@
+.about-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    text-align: center;
+
+    background-color: $bgc;
+    border-radius: 20px;
+    padding: 30px 15px;
+
+    @media (max-width: 768px) {
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    img,
+    svg {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        fill: currentColor;
+    }
+
+    h4 {
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 400;
+    }
+}
+
+.advantages .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    background-color: $bgc;
+    border-radius: 20px;
+    padding: 30px;
+
+    max-width: 460px;
+
+    @media (max-width: 1024px) {
+        width: 280px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    img,
+    svg {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        fill: currentColor;
+
+        @media (max-width: 768px) {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    h3 {
+        flex: 1 1 auto;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 400;
+    }
+}
+
+.projects-item {
+    border-radius: 20px;
+    overflow: hidden;
+    display: block;
+
+    img,
+    picture {
+        height: 100%;
+        object-fit: cover;
+    }
+}

@@ -7,155 +7,29 @@ if (sliders.length) {
         const section = slider.closest('section');
         let prev = section.querySelector('.prev')
         let next = section.querySelector('.next')
-        let pagination = section.querySelector('.pagination')
 
-        if (slider.closest('.hero-slider')) {
-            new Swiper(slider, {
-                modules: [Autoplay, Navigation],
-                slidesPerView: 1,
-                loop: true,
-                spaceBetween: 20,
-                navigation: {
-                    nextEl: next,
-                    prevEl: prev,
-                },
-                autoplay: {
-                    delay: 4000,
-                    pauseOnMouseEnter: true
-                },
-            })
-        }
         if (slider.closest('.advantages')) {
             new Swiper(slider, {
-                modules: [Autoplay],
-                slidesPerView: 3.2,
-                spaceBetween: 30,
+                modules: [Autoplay, Navigation],
+                slidesPerView: 'auto',
                 autoplay: {
-                    delay: 4000,
+                    delay: 3000,
                     pauseOnMouseEnter: true
+                },
+                navigation: {
+                    prevEl: prev,
+                    nextEl: next,
                 },
                 grabCursor: true,
                 breakpoints: {
-                    320: {
+                    300: {
                         slidesPerView: 1.2,
-                        spaceBetween: 10
+                        spaceBetween: 20
                     },
-                    480: {
-                        slidesPerView: 1.2,
-                        spaceBetween: 10
-                    },
-                    640: {
+                    769: {
                         slidesPerView: 2.2,
-                        spaceBetween: 10
-                    },
-                    768: {
-                        slidesPerView: 2.2,
-                        spaceBetween: 10
-                    },
-                    1024: {
-                        slidesPerView: 3.2,
                         spaceBetween: 30
-                    }
-                }
-            })
-        }
-        if (slider.closest('.product__slider')) {
-            let swiper = new Swiper(".thumbs-slider", {
-                spaceBetween: 10,
-                slidesPerView: 4,
-                freeMode: true,
-                watchSlidesProgress: true,
-            });
-
-            let swiper2 = new Swiper(".main-slider", {
-                modules: [Pagination, Thumbs],
-                spaceBetween: 10,
-                pagination: {
-                    el: pagination,
-                    clickable: true,
-                },
-                thumbs: {
-                    swiper: swiper,
-                },
-            });
-        }
-        if (slider.closest('.team')) {
-            new Swiper(slider, {
-                modules: [Autoplay, Navigation],
-                slidesPerView: 4,
-                spaceBetween: 30,
-                navigation: {
-                    nextEl: next,
-                    prevEl: prev,
-                },
-                autoplay: {
-                    delay: 4000,
-                    pauseOnMouseEnter: true
-                },
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 10
                     },
-                    480: {
-                        slidesPerView: 2,
-                        spaceBetween: 10
-                    },
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 10
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 10
-                    },
-                    1024: {
-                        spaceBetween: 10
-                    },
-                    1240: {
-                        slidesPerView: 4,
-                        spaceBetween: 30
-                    }
-                }
-            })
-        }
-        if (slider.closest('.review')) {
-            new Swiper(slider, {
-                modules: [Autoplay, Navigation],
-                slidesPerView: 4,
-                spaceBetween: 30,
-                navigation: {
-                    nextEl: next,
-                    prevEl: prev,
-                },
-                autoplay: {
-                    delay: 4000,
-                    pauseOnMouseEnter: true
-                },
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 10
-                    },
-                    480: {
-                        slidesPerView: 2,
-                        spaceBetween: 10
-                    },
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 10
-                    },
-                    992: {
-                        slidesPerView: 3,
-                        spaceBetween: 10
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 10
-                    }, 1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 30
-                    }
                 }
             })
         }

@@ -61,14 +61,26 @@ h1 {
 }
 
 h2 {
-    @include adaptive-value("font-size", 48, 20, 1);
-    line-height: 1;
+    @include adaptive-value("font-size", 40, 20, 1);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+    span {
+        color: $accent;
+    }
 }
 
 h3 {
+    @include adaptive-value("font-size", 22, 18, 1);
+    font-weight: 500;
+    line-height: 1.1;
 }
 
 h4 {
+    @include adaptive-value("font-size", 24, 18, 1);
+    font-weight: 500;
+    line-height: 1.1;
 }
 
 p {
@@ -120,6 +132,13 @@ p {
         background-color: $accent;
         color: $fff;
     }
+
+    // ._btn-white
+
+    &-white {
+        background-color: $white;
+        color: $accent;
+    }
 }
 
 .social {
@@ -150,88 +169,6 @@ p {
     }
 }
 
-.swiper {
-    // .swiper-wrapper
-
-    &-wrapper {
-    }
-
-    // .swiper-slide
-
-    &-slide {
-    }
-}
-
-.swiper-button-disabled {
-    opacity: 0.5;
-}
-
-.navigation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-
-    @media (max-width: 1024px) {
-        gap: 10px;
-    }
-
-    button {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        width: 80px;
-        height: 80px;
-
-        border-radius: 50%;
-        border-top: 2px solid #ff451c;
-        border-right: 2px solid #ff451c;
-        border-bottom: 5px solid #ff451c;
-        border-left: 2px solid #ff451c;
-
-        transition: background-color 0.3s ease 0s;
-
-        @media (max-width: 1024px) {
-            width: 50px;
-            height: 50px;
-        }
-
-        img,
-        svg {
-            flex: 0 0 auto;
-            width: 14px;
-            height: 14px;
-            object-fit: contain;
-            fill: currentColor;
-            transition: fill 0.3s ease 0s;
-            pointer-events: none;
-        }
-
-        &:not(.swiper-button-disabled) {
-            @media (any-hover: hover) {
-                &:hover {
-                    background-color: $accent;
-
-                    svg {
-                        fill: $white;
-                    }
-                }
-            }
-        }
-    }
-
-    .prev {
-        img,
-        svg {
-            transform: rotate(180deg);
-        }
-    }
-    .next {
-    }
-}
-
 figure,
 img,
 svg,
@@ -246,31 +183,87 @@ picture {
     pointer-events: none;
 }
 
-.swiper {
-    width: 100%;
-
-    .swiper-wrapper {
-        width: 100%;
-        height: auto;
-        align-items: flex-end;
-    }
-
-    .swiper-slide {
-        height: auto;
-    }
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-/* Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
 }
 
-.swiper-button-lock {
-    display: none !important;
+.navigation {
+    display: flex;
+    gap: 15px;
+
+    @media (max-width: 768px) {
+        gap: 10px;
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        border: 2px solid currentColor;
+
+        @include adaptive-value("width", 70, 40, 1);
+        @include adaptive-value("height", 70, 40, 1);
+
+        img,
+        svg {
+            pointer-events: none;
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+            fill: currentColor;
+            flex: 0 0 auto;
+
+            @media (max-width: 768px) {
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }
+
+    .prev {
+        img,
+        svg {
+            transform: rotate(-180deg);
+        }
+    }
+
+    .next {
+    }
+
+    .swiper-button-disabled {
+        opacity: 0.25;
+    }
+
+    .swiper-button-lock {
+        display: none;
+    }
+}
+
+.swiper {
+    // .swiper-wrapper
+
+    &-wrapper {
+    }
+
+    // .swiper-slide
+
+    &-slide {
+        height: auto;
+    }
+}
+
+[data-tab-content] {
+    display: none;
+
+    &._active {
+        display: block;
+    }
 }

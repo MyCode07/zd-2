@@ -1,6 +1,6 @@
-// import { maskInputs } from "./static/inputmask.js";
-// import "./parts/sliders.js";
-// import "./parts/tabs.js";
+import { maskInputs } from "./static/inputmask.js";
+import "./parts/sliders.js";
+import "./parts/tabs.js";
 // import "./parts/show-more.js";
 import "./parts/popup.js";
 import "./parts/menu.js";
@@ -21,8 +21,8 @@ import { Fancybox } from "@fancyapps/ui";
 
 stickyHeader();
 maskInputs('+7 (999) 999-99-99', '._mask-phone')
-animateAction();
-animateStaggerAction();
+// animateAction();
+// animateStaggerAction();
 
 Fancybox.bind("[data-fancybox]", {
     Carousel: {

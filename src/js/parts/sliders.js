@@ -23,12 +23,56 @@ if (sliders.length) {
                 grabCursor: true,
                 breakpoints: {
                     300: {
-                        slidesPerView: 1.2,
                         spaceBetween: 20
                     },
-                    769: {
-                        slidesPerView: 2.2,
+                    1025: {
                         spaceBetween: 30
+                    },
+                }
+            })
+        }
+
+        if (slider.closest('.team')) {
+            new Swiper(slider, {
+                modules: [Navigation],
+                navigation: {
+                    prevEl: prev,
+                    nextEl: next,
+                },
+                grabCursor: true,
+                breakpoints: {
+                    300: {
+                        spaceBetween: 20,
+                        slidesPerView: 'auto',
+                    },
+                    1025: {
+                        spaceBetween: 30,
+                        slidesPerView: 3,
+                    },
+                }
+            })
+        }
+
+        if (slider.closest('.reviews')) {
+            new Swiper(slider, {
+                modules: [Autoplay, Navigation],
+                autoplay: {
+                    delay: 3000,
+                    pauseOnMouseEnter: true
+                },
+                navigation: {
+                    prevEl: prev,
+                    nextEl: next,
+                },
+                grabCursor: true,
+                breakpoints: {
+                    300: {
+                        spaceBetween: 20,
+                        slidesPerView: 'auto',
+                    },
+                    1025: {
+                        spaceBetween: 30,
+                        slidesPerView: 2,
                     },
                 }
             })

@@ -1,0 +1,100 @@
+.form {
+    // .form__row
+
+    &__row {
+        display: flex;
+        gap: 10px;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .form__item {
+            width: calc(50% - 5px);
+        }
+    }
+
+    // .form__item
+
+    &__item {
+        border: 2px solid $gray;
+        border-radius: 100px;
+
+        &:has(textarea) {
+            border-radius: 30px;
+        }
+
+        input,
+        textarea {
+            padding: 20px;
+
+            &::placeholder {
+                color: rgba($color: $black, $alpha: 0.5);
+            }
+        }
+
+        input {
+            height: 65px;
+        }
+
+        textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        &[data-required] {
+            position: relative;
+
+            &:before {
+                position: absolute;
+                content: "*";
+                right: 20px;
+                top: 20px;
+            }
+        }
+    }
+
+    // .form__bottom
+
+    &__bottom {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+
+        ._btn {
+            height: 65px;
+            width: 100%;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 400;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // .form-white
+
+    &-white {
+        color: $white;
+
+        .form__item {
+            border: 2px solid rgba($color: $white, $alpha: 0.1);
+
+            input,
+            textarea {
+                &::placeholder {
+                    color: rgba($color: $white, $alpha: 0.5);
+                }
+            }
+        }
+
+        ._btn {
+            color: $white;
+        }
+    }
+}

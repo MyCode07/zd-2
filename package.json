@@ -1,6 +1,6 @@
 {
-    "name": "yan studio",
-    "version": "3.0.0",
+    "name": "stynergy",
+    "version": "1.0.0",
     "description": "",
     "main": "gulpfile.js",
     "type": "module",
@@ -14,7 +14,6 @@
     "license": "ISC",
     "dependencies": {
         "animejs": "^3.2.1",
-        "compression-webpack-plugin": "^10.0.0",
         "dat.gui": "^0.7.9",
         "dhx-suite": "^7.1.10",
         "fullpage.js": "^4.0.12",

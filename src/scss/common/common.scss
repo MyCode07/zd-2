@@ -147,6 +147,10 @@ p {
         background-color: transparent;
         color: $black;
         border: 2px solid currentColor;
+
+        @media (max-width: 768px) {
+            border-width: 1px;
+        }
     }
 }
 

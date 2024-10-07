@@ -136,6 +136,13 @@
 
         ._btn {
             color: $white;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: $white;
+                    color: $accent;
+                }
+            }
         }
     }
 }

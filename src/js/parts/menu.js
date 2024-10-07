@@ -2,19 +2,21 @@ import { lockPadding, unLockPadding } from '../utils/lockPadding.js';
 
 
 const burger = document.querySelector('.header__burger');
-const menu = document.querySelector('.menu');
+const menu = document.querySelector('.header nav');
+const menuMobile = document.querySelector('.menu');
 const allMenuLinks = document.querySelectorAll('nav ul li a');
 const menuCloseBtn = document.querySelector('._close');
 if (burger) {
     burger.addEventListener('click', (e) => {
         menu.classList.toggle('_open');
-        burger.classList.toggle('_open');
+        menuMobile.classList.toggle('_open');
+        burger.classList.toggle('_active');
 
         if (menu.classList.contains('_open')) {
-            lockPadding();
+            // lockPadding();
         }
         else {
-            unLockPadding();
+            // unLockPadding();
         }
     })
 }
@@ -93,4 +95,13 @@ document.addEventListener('click', function (e) {
     if (!targetEl.closest('li[data-open]') && !targetEl.closest('nav') && document.querySelector('li[data-open]')) {
         document.querySelector('li[data-open]').removeAttribute('data-open')
     }
+
+    if (targetEl.classList.contains('header__lang')) {
+        targetEl.classList.toggle('_active');
+    }
+
+    if (!targetEl.closest('header__lang') && !targetEl.classList.contains('header__lang') && document.querySelector('.header__lang._active')) {
+        document.querySelector('.header__lang._active').classList.remove('_active')
+    }
 })
+

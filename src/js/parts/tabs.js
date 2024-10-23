@@ -1,4 +1,5 @@
 const tabAreas = document.querySelectorAll('[data-tabs-area]');
+const tabAreasBtn = document.querySelector('.projects ._btn');
 
 
 if (tabAreas.length) {
@@ -20,6 +21,11 @@ if (tabAreas.length) {
                     }
                     else {
                         item.classList.remove('_active');
+                        item.classList.remove('_open');
+
+                        if (tabAreasBtn) {
+                            tabAreasBtn.textContent = tabAreasBtn.dataset.textHide
+                        }
                     }
                 });
 
@@ -31,6 +37,11 @@ if (tabAreas.length) {
                     }
                     else {
                         item.classList.remove('_active');
+                        item.classList.remove('_open');
+
+                        if (tabAreasBtn) {
+                            tabAreasBtn.textContent = tabAreasBtn.dataset.textHide
+                        }
                     }
                 });
             })

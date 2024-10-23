@@ -1,11 +1,9 @@
 import { lockPadding, unLockPadding } from '../utils/lockPadding.js';
 
-
 const burger = document.querySelector('.header__burger');
 const menu = document.querySelector('.header nav');
 const menuMobile = document.querySelector('.menu');
 const allMenuLinks = document.querySelectorAll('nav ul li a');
-const menuCloseBtn = document.querySelector('._close');
 if (burger) {
     burger.addEventListener('click', (e) => {
         menu.classList.toggle('_open');
@@ -21,21 +19,14 @@ if (burger) {
     })
 }
 
-
-if (menuCloseBtn) {
-    menuCloseBtn.addEventListener('click', (e) => {
-        menu.classList.remove('_open');
-        burger.classList.remove('_open');
-        unLockPadding();
-    })
-}
-
-
 if (allMenuLinks.length) {
     allMenuLinks.forEach(link => {
         link.addEventListener('click', (е) => {
-            if (menu.classList.contains('_open')) {
-                menu.classList.remove('_open');
+            if (burger.classList.contains('_active')) {
+                menu.classList.toggle('_open');
+                menuMobile.classList.remove('_open');
+                burger.classList.remove('_active');
+
                 unLockPadding();
             }
         })
@@ -45,8 +36,8 @@ if (allMenuLinks.length) {
 
 // menu arrow buttom
 const arrow = `<button><svg class="catalog-arrow" width="12" height="7" viewBox="0 0 12 7" fill="none"><path d="M1 0.5L6 5.5L11 0.5" stroke-width="1.25"/></svg></button>`;
-
 // add menu summenu opener button
+
 const submenuList = document.querySelectorAll('nav ul li');
 if (submenuList.length) {
     submenuList.forEach(li => {
@@ -87,8 +78,6 @@ if (submenuList.length) {
     }
 }
 
-
-
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
 
@@ -104,4 +93,3 @@ document.addEventListener('click', function (e) {
         document.querySelector('.header__lang._active').classList.remove('_active')
     }
 })
-

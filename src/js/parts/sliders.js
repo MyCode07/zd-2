@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Pagination, Autoplay, Thumbs, Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 
 const sliders = document.querySelectorAll('.swiper');
 if (sliders.length) {

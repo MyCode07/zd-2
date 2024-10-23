@@ -83,18 +83,14 @@
                         margin-bottom: 15px;
                     }
                 }
-
-                
             }
         }
 
         .social {
+            justify-content: flex-start;
+
             @media (min-width: 769px) {
                 flex-direction: column;
-            }
-
-            @media (max-width: 768px) {
-                justify-content: flex-start;
             }
 
             a {

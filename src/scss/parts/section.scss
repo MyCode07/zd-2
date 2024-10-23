@@ -36,7 +36,7 @@
         p {
             margin-top: 15px;
             font-weight: 400;
-            max-width: 600px;
+            max-width: 605px;
         }
 
         // .section__top-flex
@@ -142,6 +142,10 @@
     ._btn {
         margin-inline: auto;
         margin-top: 30px;
+    }
+
+    [data-tab-content]:not(._open) .projects-item:nth-child(n + 13) {
+        display: none;
     }
 }
 
